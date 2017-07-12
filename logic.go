@@ -9,7 +9,7 @@ import (
 	
 	"time"
     "io/ioutil"
-    "bytes"
+    
     "net/http"
     "log"
 
@@ -61,6 +61,8 @@ func testGet(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
 
 	fmt.Printf("HTTP: %s\n", res.Status)
     fmt.Println(person1)
+	
+	person1AsBytes, _ := json.Marshal(person1)
+	return person1AsBytes, nil
 
-	return person1, nil
 }
