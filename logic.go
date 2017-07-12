@@ -19,7 +19,10 @@ type person struct {
     Name string `json:"name"`
 }
 
-
+func initializeChaincode(stub shim.ChaincodeStubInterface, args []string) error {
+	
+	return nil
+}
 func testPost(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
 	
 	return nil, nil
