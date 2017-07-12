@@ -18,12 +18,6 @@ func (t *DTC_Chaincode) Init(stub shim.ChaincodeStubInterface, function string, 
 		return nil, errors.New("Incorrect number of arguments. Expecting 0")
 	}
 
-	//Create database on blockchain
-	err = initializeChaincode(stub, args)
-	if err != nil {
-		return nil, err
-	}
-
 	return nil, nil
 }
 
