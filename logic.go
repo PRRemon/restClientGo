@@ -33,7 +33,7 @@ func testGet(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
 		return nil, errors.New("Incorrect number of arguments. Need 0 arguments")
 	}
 
-	urlGet := "http://localhost:8080/api/login/test"
+	urlGet := "http://10.102.8.17:8080/api/login/test"
 
     spaceClient := http.Client{
         Timeout: time.Second * 2, // Maximum of 2 secs
