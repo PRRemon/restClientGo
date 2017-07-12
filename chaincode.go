@@ -17,9 +17,9 @@ func (t *DTC_Chaincode) Init(stub shim.ChaincodeStubInterface, function string, 
 	if len(args) != 0 {
 		return nil, errors.New("Incorrect number of arguments. Expecting 0")
 	}
-	err := shim.Start(new(DTC_Chaincode))
+	err = initializeChaincode(stub, args)
 	if err != nil {
-		fmt.Printf("Error starting Simple chaincode: %s", err)
+		return nil, err
 	}
 
 	return nil, nil
