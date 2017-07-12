@@ -15,25 +15,14 @@ import (
 
 	"github.com/hyperledger/fabric/core/chaincode/shim"
 )
+type person struct {  
+    Name string `json:"name"`
+}
+
 
 func testPost(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
-	var err error
-	var ok bool
-
-	if len(args) != 3 {
-		return nil, errors.New("Incorrect number of arguments. Need 3 arguments")
-	}
-
-	contractId := args[0]
-	attachmentName := args[1]
-	documentBlob := args[2]
-
-	ok, err = insertAttachmentDetails(stub, contractId, attachmentName, documentBlob)
-	if !ok && err == nil {
-		return nil, errors.New("Error in inserting attachment")
-	}
-
-	return nil, err
+	
+	return nil, nil
 }
 
 func testGet(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
